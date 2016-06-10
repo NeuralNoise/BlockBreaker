@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
             {
                 hasStarted = true;
                 print("Launch ball");
-                GetComponent<Rigidbody2D>().velocity = new Vector3(2, 15, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector3(2, 5, 0);
             }
         }
 
