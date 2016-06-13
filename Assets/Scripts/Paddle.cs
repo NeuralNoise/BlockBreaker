@@ -13,7 +13,7 @@ public class Paddle : MonoBehaviour {
     {
         Vector3 PaddlePos = transform.localPosition;
         float mousePosInBlocks = Input.mousePosition.x / Screen.width * 16;
-        mousePosInBlocks = Mathf.Clamp(mousePosInBlocks, 0f, 15f);
+        mousePosInBlocks = Mathf.Clamp(mousePosInBlocks, 0.5f, 15.5f);
         PaddlePos.x = mousePosInBlocks - 0.5f;
         transform.localPosition = PaddlePos;
 	}

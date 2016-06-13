@@ -6,10 +6,13 @@ public class Ball : MonoBehaviour
     Paddle paddle;
     bool hasStarted = false;
     Vector3 paddleToBallVector;
+    AudioSource audioSource;
+    Rigidbody2D rigidBody2D;
 
 	// Use this for initialization
 	void Start ()
     {
+        audioSource = GetComponent<AudioSource>();
         paddle = FindObjectOfType<Paddle>();
         paddleToBallVector = transform.position - paddle.transform.position;
 	}
@@ -23,10 +26,19 @@ public class Ball : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 hasStarted = true;
-                print("Launch ball");
-                GetComponent<Rigidbody2D>().velocity = new Vector3(2, 5, 0);
+                GetComponent<Rigidbody2D>().velocity = new Vector3(2, 13, 0);
             }
         }
 
 	}
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Vector2 tweak = new Vector2(Random.Range(0,0.2f), Random.Range(0, 0.2f));
+        rigidBody2D.velocity += tweak;
+        if(hasStarted)
+        {
+            audioSource.Play();
+        }
+    }
 }
