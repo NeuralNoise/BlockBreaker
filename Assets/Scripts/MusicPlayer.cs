@@ -9,7 +9,6 @@ public class MusicPlayer : MonoBehaviour
         if (instance != null)
         {
             Destroy(gameObject);
-            print("Destroy on load");
         }
         else
         {

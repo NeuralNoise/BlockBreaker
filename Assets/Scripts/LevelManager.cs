@@ -5,11 +5,13 @@ public class LevelManager : MonoBehaviour
 {
     public void LoadLevel(string level)
     {
+        Brick.breakableCount = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene(level);
     }
 
     public void LoadNextLevel()
     {
+        Brick.breakableCount = 0;
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1);
     }
 
