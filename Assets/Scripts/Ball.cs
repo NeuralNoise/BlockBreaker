@@ -27,7 +27,7 @@ public class Ball : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 hasStarted = true;
-                rigidBody2D.velocity = new Vector3(2, 13, 0);
+                rigidBody2D.velocity = new Vector3(2, 8, 0);
             }
         }
 
@@ -35,8 +35,6 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //Vector2 tweak = new Vector2(Random.Range(0,0.2f), Random.Range(0, 0.2f));
-        //rigidBody2D.velocity += tweak;
         if(hasStarted)
         {
             audioSource.Play();
